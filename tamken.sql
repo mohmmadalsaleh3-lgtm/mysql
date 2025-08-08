@@ -123,11 +123,10 @@ SELECT
     p.title AS post_title,
     u.username AS author,
     u.email,
-    u.password,
-    u.is_admin,
     c.name AS category
 FROM posts p
 JOIN users u ON p.user_id = u.user_id
 LEFT JOIN post_category pc ON p.post_id = pc.post_id
 LEFT JOIN categories c ON pc.category_id = c.category_id
+
 ORDER BY p.post_id;
